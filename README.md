@@ -9,11 +9,13 @@ npm install @codeooze/react-native-wallpaper-manager
 ## Usage
 
 ```js
-import { multiply } from "@codeooze/react-native-wallpaper-manager";
+import { applyWallpaper } from "@codeooze/react-native-wallpaper-manager";
 
 // ...
 
-const result = await multiply(3, 7);
+   applyWallpaper(uri, screen)
+     .then((response) => { Alert.alert(response) })
+     .catch((error) => { Alert.alert(error.message) })
 ```
 
 ## Contributing
