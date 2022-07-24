@@ -1,5 +1,5 @@
 import *as React from 'react';
-import { View, StyleSheet, FlatList, Image, Text, Alert, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, FlatList, Image, Text, Alert, TouchableOpacity, ListRenderItem } from 'react-native';
 import { applyWallpaper } from '@codeooze/react-native-wallpaper-manager';
 
 const wallpaperData = [
@@ -12,7 +12,7 @@ const wallpaperData = [
 
 const App = () => {
 
-  const setWallpaper = (uri, screen) => {
+  const setWallpaper = (uri: string, screen: string) => {
 
     applyWallpaper(uri, screen)
       .then((response) => { Alert.alert(response) })
@@ -20,22 +20,22 @@ const App = () => {
 
   }
 
-  const showAlert = (item) =>
+  const showAlert = (uri: string) =>
   Alert.alert(
     "Apply wallpaper",
     "Are you sure want to apply this wallpaper?",
     [
       {
         text: "Home",
-        onPress: () => setWallpaper(item, 'home')
+        onPress: () => setWallpaper(uri, 'home')
       },
       {
         text: "Lock",
-        onPress: () => setWallpaper(item, 'lock')
+        onPress: () => setWallpaper(uri, 'lock')
       },
       {
         text: "Both",
-        onPress: () => setWallpaper(item, 'both')
+        onPress: () => setWallpaper(uri, 'both')
       }
     ],
     {
@@ -43,7 +43,7 @@ const App = () => {
     }
   );
 
-  const _renderItem = ({item}) => {
+  const _renderItem: ListRenderItem<any> = ({item}) => {
     return (
       <TouchableOpacity style={styles.Card} onPress={() => { showAlert(item) }} >
         <Image source={{ uri: item }} style={StyleSheet.absoluteFill} />

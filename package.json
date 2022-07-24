@@ -5,26 +5,18 @@
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
+  "react-native": "src/index.ts",
   "source": "src/index",
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
-    "cpp",
-    "codeooze-react-native-wallpaper-manager.podspec",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
+    "mock.js"
   ],
   "scripts": {
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "build": "bob build && yarn copy-dts && yarn delete-dts.js && yarn delete-debug-view",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
@@ -33,7 +25,9 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "react-native-wallpaper-manager",
+    "wallpaperManager"
   ],
   "repository": "https://github.com/codeooze/react-native-wallpaper-manager",
   "author": "codeooze <codeooze8@gmail.com> (https://github.com/codeooze)",
@@ -140,12 +134,7 @@
     "targets": [
       "commonjs",
       "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
+      "typescript"
     ]
   }
 }
