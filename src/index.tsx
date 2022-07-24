@@ -15,6 +15,6 @@ const ReactNativeWallpaperManager = NativeModules.ReactNativeWallpaperManager  ?
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return ReactNativeWallpaperManager.multiply(a, b);
+export function applyWallpaper(uri: any, screen: string): Promise<any> {
+  return ReactNativeWallpaperManager.applyWallpaper(uri, screen)
 }
