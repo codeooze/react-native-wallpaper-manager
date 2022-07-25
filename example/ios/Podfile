@@ -27,7 +27,6 @@ target 'ReactNativeWallpaperManagerExample' do
   # you should disable the next line.
   use_flipper!()
 
-  pod 'codeooze-react-native-wallpaper-manager', :path => '../node_modules/@codeooze/react-native-wallpaper-manager'
 
   post_install do |installer|
     react_native_post_install(installer)
