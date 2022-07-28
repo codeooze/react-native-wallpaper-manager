@@ -1,10 +1,16 @@
+
 # @codeooze/react-native-wallpaper-manager
 React native wallpaper manager
+
+> *Note: This package is only for android.*
+
 ## Installation
 
 ```sh
 npm install @codeooze/react-native-wallpaper-manager
 ```
+## React Native 0.59 and below
+Run `npx react-native link @codeooze/react-native-wallpaper-manager` to link the library.
 
 ## Usage
 
@@ -14,6 +20,7 @@ import *as React from 'react';
 import { applyWallpaper } from '@codeooze/react-native-wallpaper-manager';
 
 const App = () => {
+
   // ...
   
   const setWallpaper = (uri, screen) => {
@@ -40,3 +47,6 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+
+## Buy me a coffee
+<a href="https://www.buymeacoffee.com/codeooze" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
