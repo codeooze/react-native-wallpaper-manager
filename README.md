@@ -1,4 +1,9 @@
 
+<br/>
+<br/>
+
+<img src="https://raw.githubusercontent.com/codeooze/react-native-wallpaper-manager/main/icon.png" alt="drawing" width="150" height="150"/>
+
 # @codeooze/react-native-wallpaper-manager
 React native wallpaper manager
 
